@@ -18,3 +18,4 @@ class Lead:
     
     def __str__(self):
         return str(self.get_data())
+    
