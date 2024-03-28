@@ -1,11 +1,5 @@
 from lead import Lead
-from googlesearch import search
-
-def get_google_urls(query, num_results=100):
-    urls = []
-    for url in search(query, num_results=num_results, lang='en' ,advanced=False):
-        urls.append(url)
-    return urls
+from search_interface import get_google_urls
 
 search_query = input("Enter your search query: ")
 urls = get_google_urls(search_query, num_results=100)
