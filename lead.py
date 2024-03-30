@@ -2,9 +2,10 @@ from bs4 import BeautifulSoup
 import urllib.request
 import re
 class Lead:
-    def __init__(self, url):
+    def __init__(self, url, title, description):
         self.url = url
-        self.title = None
+        self.title = title
+        self.description = description
         self.soup = None
         self.emails = []
         self.phone_numbers = []
@@ -92,7 +93,13 @@ class Lead:
 
     # Data getters
     def get_data(self):
-        return {"title": self.title, "emails": self.emails, "phone_numbers": self.phone_numbers}
+        return {
+            'url': self.url,
+            'title': self.title,
+            'description': self.description,
+            'emails': self.emails,
+            'phone_numbers': self.phone_numbers,
+        }
     
     def __str__(self):
         return str(self.get_data())
